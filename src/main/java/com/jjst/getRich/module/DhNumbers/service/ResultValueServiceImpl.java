@@ -2,7 +2,7 @@ package com.jjst.getRich.module.DhNumbers.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jjst.getRich.common.OutterCon;
+import com.jjst.getRich.config.RestTemplateConfig;
 import com.jjst.getRich.common.Utility;
 import com.jjst.getRich.dto.ResultValueDto;
 import com.jjst.getRich.module.DhNumbers.entity.ResultValue;
@@ -11,13 +11,11 @@ import com.jjst.getRich.service.ResultValueService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ResultValueServiceImpl implements ResultValueService {
@@ -128,7 +126,7 @@ public class ResultValueServiceImpl implements ResultValueService {
     //returns the result for the requested DrawNo
     private ResultValueDto getNumbers(Integer drawNo) throws JsonProcessingException {
         ResultValueDto result = null;
-        OutterCon con = new OutterCon();
+        RestTemplateConfig con = new RestTemplateConfig();
         ResponseEntity<String> response = con.getNumbersFromUrl(drawNo, url);
         if (response.getStatusCode().is2xxSuccessful()) {
             if(!response.getBody().contains("fail")) {

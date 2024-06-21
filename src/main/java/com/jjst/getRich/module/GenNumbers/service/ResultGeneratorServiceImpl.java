@@ -1,14 +1,7 @@
 package com.jjst.getRich.module.GenNumbers.service;
 
-import com.jjst.getRich.dto.ResultEntity;
-import com.jjst.getRich.dto.ResultValueDto;
-import com.jjst.getRich.module.DhNumbers.entity.ResultValue;
 import com.jjst.getRich.service.ResultGeneratorService;
-import com.jjst.getRich.service.ResultValueService;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class ResultGeneratorServiceImpl implements ResultGeneratorService {

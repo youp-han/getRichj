@@ -1,9 +1,10 @@
-package com.jjst.getRich.common;
+package com.jjst.getRich.config;
 
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-public class OutterCon {
+public class RestTemplateConfig {
 
     public ResponseEntity<String> getNumbersFromUrl(Integer drawNo, String url) {
 

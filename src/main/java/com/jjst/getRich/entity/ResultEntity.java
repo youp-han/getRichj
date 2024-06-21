@@ -1,4 +1,4 @@
-package com.jjst.getRich.dto;
+package com.jjst.getRich.entity;
 
 import lombok.Builder;
 import lombok.Data;

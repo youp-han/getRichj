@@ -1,11 +1,9 @@
 package com.jjst.getRich.controller;
 
-import com.jjst.getRich.dto.ResultEntity;
+import com.jjst.getRich.entity.ResultEntity;
 import com.jjst.getRich.dto.ResultValueDto;
-import com.jjst.getRich.module.DhNumbers.entity.ResultValue;
 import com.jjst.getRich.service.CSVConverterService;
 import com.jjst.getRich.service.ResultValueService;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @RestController

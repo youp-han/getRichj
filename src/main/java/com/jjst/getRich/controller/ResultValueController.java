@@ -3,6 +3,7 @@ package com.jjst.getRich.controller;
 import com.jjst.getRich.dto.ResultEntity;
 import com.jjst.getRich.dto.ResultValueDto;
 import com.jjst.getRich.module.DhNumbers.entity.ResultValue;
+import com.jjst.getRich.service.CSVConverterService;
 import com.jjst.getRich.service.ResultValueService;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,6 +24,9 @@ public class ResultValueController {
 
     @Autowired
     private ResultValueService service;
+
+    @Autowired
+    private CSVConverterService csvConverterService;
 
     //updateDhNumbers
     //if the local db is behind the drawno from Dhsite, it updates from the site.
@@ -45,6 +50,22 @@ public class ResultValueController {
                 .build());
 
 
+    }
+
+    @GetMapping("/csvFile")
+    public ResponseEntity<ResultEntity> convertDataToFile(){
+
+        try{
+            csvConverterService.exportToCsv("win_history.csv");
+
+        }catch(IOException e){
+
+        }
+
+        return ResponseEntity.ok(ResultEntity.builder()
+                .status("Data Exported to CSV successfully")
+                .data(null).count(1)
+                .build());
     }
 
 

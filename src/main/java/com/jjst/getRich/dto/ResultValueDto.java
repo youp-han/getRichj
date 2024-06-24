@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
+// 외부 data 를 호출하여 저장 시 사용
 public class ResultValueDto {
 
     private Long totSellamnt; // 총판매금액

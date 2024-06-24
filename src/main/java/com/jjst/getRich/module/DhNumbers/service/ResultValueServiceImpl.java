@@ -32,6 +32,16 @@ public class ResultValueServiceImpl implements ResultValueService {
     public List<ResultValue> getAll() {
         return repository.findAll();
     }
+    @Override
+    public List<ResultValueDto> getAllDto(){
+         List<ResultValue> resultValues = getAll();
+         List<ResultValueDto> resultValueDtoList = new ArrayList<>();
+         for(ResultValue value : resultValues){
+             resultValueDtoList.add(toDto(value));
+         }
+
+         return resultValueDtoList;
+    }
 
     //returns the lastest win number
     //checks the last number and if neccessary it updates to the latest number.

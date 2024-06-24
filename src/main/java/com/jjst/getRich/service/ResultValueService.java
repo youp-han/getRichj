@@ -9,6 +9,7 @@ import java.util.List;
 public interface ResultValueService {
 
     List<ResultValue> getAll();
+    List<ResultValueDto> getAllDto();
     ResultValueDto getTheLatestNumber() throws JsonProcessingException;
 
 

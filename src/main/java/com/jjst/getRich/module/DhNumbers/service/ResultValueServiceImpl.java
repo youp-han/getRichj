@@ -85,7 +85,7 @@ public class ResultValueServiceImpl implements ResultValueService {
         boolean flag = true;
 
         while(flag){
-            resultValue = getNumbers(count);
+            resultValue = this.getNumbers(count);
             if(resultValue != null){
                 count ++;
                 resultValueDtoList.add(resultValue);
@@ -140,7 +140,6 @@ public class ResultValueServiceImpl implements ResultValueService {
     //changes the entity to dto
     private ResultValueDto toDto(ResultValue value){
         if(value== null) return null;
-
         return ResultValueDto.builder()
                 .drwNoDate(value.getDrwNoDate())
                 .drwNo(value.getDrwNo())
@@ -155,7 +154,6 @@ public class ResultValueServiceImpl implements ResultValueService {
                 .firstWinamnt(value.getFirstWinamnt())
                 .returnValue(value.getReturnValue())
                 .build();
-
     }
 
     //changes the dto to entity

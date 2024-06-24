@@ -37,7 +37,6 @@ public class ChatController {
             response = restTemplate.postForObject(apiUrl, request, ChatResponseDto.class);
         } catch (HttpClientErrorException e) {
             if (e.getStatusCode() == HttpStatus.TOO_MANY_REQUESTS) {
-                // Handle 429 Too Many Requests
                 return "Too many requests. Please try again later.";
             }
             throw e;

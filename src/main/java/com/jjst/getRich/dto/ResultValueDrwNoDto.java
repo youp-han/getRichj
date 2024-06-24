@@ -3,6 +3,7 @@ package com.jjst.getRich.dto;
 import lombok.Data;
 
 @Data
+// 내부 db 를 통한 분석용 정보 제공 시 사용
 public class ResultValueDrwNoDto {
     private Integer drwtNo6;
     private Integer drwtNo5;

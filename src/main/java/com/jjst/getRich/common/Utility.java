@@ -23,7 +23,6 @@ public class Utility {
 
         // Parse the date string into LocalDateTime using the formatter
         try {
-            // Parse the date string into LocalDate using the formatter
             return LocalDate.parse(date, formatter);
         } catch (DateTimeParseException e) {
             // Handle the exception (e.g., log error, throw custom exception, etc.)
@@ -33,6 +32,6 @@ public class Utility {
     }
 
     public static long dateDiffFromToday(LocalDate date){
-        return ChronoUnit.DAYS.between(LocalDate.now(), date);
+        return ChronoUnit.DAYS.between(date, LocalDate.now());
     }
 }

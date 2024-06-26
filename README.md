@@ -12,3 +12,18 @@ This is a java version of GetRich
 3. To do List
    - Recommended numbers
    - etc, etc
+
+4. To run, 
+   - H2 or your selection of db must be running
+   - mvn package -DskipTests
+   - in \target\ folder, a jar file gets created
+   - java -jar .\target\getRich-0.0.1-SNAPSHOT.jar
+
+5. API
+   - http://localhost:8080/result
+     - it produces the last win number
+   - http://localhost:8080/result/genNum
+     - it shows the occurence numbers of 1..45
+     - the api name will be changed
+   - http://localhost:8080/result/csvFile
+     - it produces all results from db to csvFile
